@@ -1,12 +1,12 @@
 
 /*
-  Project Title:
-  Team Members:
-  Date:
-  Section:
+  Project Title: VEX Clawbot
+  Team Members: Matthew Finerty
+  Date: April 24th, 2017
+  Section: Robotics
 
 
-  Task Description:
+  Task Description: Create a robot that is able to to pick up and place cones
 
 
   Pseudocode:
