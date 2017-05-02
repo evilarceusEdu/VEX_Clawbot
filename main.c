@@ -98,7 +98,7 @@ task main()
 			stopMotor(clawJoint);
 		}
 
-		// Control conveyor belt
+		// Move conveyor belt forward
 		if (vexRT(Btn6D) == 1)
 		{
 			startMotor(rightBelt, 127);
@@ -106,6 +106,19 @@ task main()
 		}
 
 		if (vexRT(Btn6D) == 0)
+		{
+			stopMotor(rightBelt);
+			stopMotor(leftBelt);
+		}
+
+		// Move conveyor belt backwards
+		if (vexRT(Btn5D) == 1)
+		{
+			startMotor(rightBelt, -127);
+			startMotor(leftBelt, -127);
+		}
+
+		if (vexRT(Btn5D) == 0)
 		{
 			stopMotor(rightBelt);
 			stopMotor(leftBelt);
