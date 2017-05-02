@@ -75,7 +75,7 @@ task main()
 				stopMotor(clawMotor);
 				claw_isOpen = true;
 			}
-			if (claw_isOpen == true)
+			else if (claw_isOpen == true)
 			{
 				startMotor(clawMotor, -63);
 				wait(1);
