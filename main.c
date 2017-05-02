@@ -40,13 +40,6 @@ task main()
 			startMotor(rightMotor, vexRT(Ch3));
 		}
 
-		// Stop when joystick is not active
-		if (vexRT(Ch3) == 0)
-		{
-			stopMotor(leftMotor);
-			stopMotor(rightMotor);
-		}
-
 		// Turn right
 		if (vexRT(Ch4) > 0)
 		{
@@ -62,7 +55,7 @@ task main()
 		}
 
 		// Stop when joystick is not active
-		if (vexRT(Ch4) == 0)
+		if (vexRT(Ch3) == 0 && vexRT(Ch4) == 0)
 		{
 			stopMotor(leftMotor);
 			stopMotor(rightMotor);
