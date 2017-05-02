@@ -38,6 +38,27 @@ task main()
 			stopMotor(rightMotor);
 		}
 
+		// Turn right
+		if (vexRT(Ch4) > 0)
+		{
+			startMotor(leftMotor, vexRT(Ch4));
+			startMotor(rightMotor, vexRT(Ch4)*-1);
+		}
+
+		// Turn left
+		if (vexRT(Ch4) < 0)
+		{
+			startMotor(leftMotor, vexRT(Ch4));
+			startMotor(rightMotor, vexRT(Ch4)*-1);
+		}
+
+		// Stop when joystick is not active
+		if (vexRT(Ch4) == 0)
+		{
+			stopMotor(leftMotor);
+			stopMotor(rightMotor);
+		}
+
 	}
 
 
