@@ -28,7 +28,7 @@
 
 task main()
 {                                     //Program begins, insert code within curly braces
-	int claw_isOpen = true;
+	int claw_isOpen = false;
 
 	while (true)
 	{
