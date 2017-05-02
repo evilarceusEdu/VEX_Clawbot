@@ -10,6 +10,9 @@
 
 
   Pseudocode:
+  While true
+  	a bunch of if statements and stuff here
+  end
 
 */
 
