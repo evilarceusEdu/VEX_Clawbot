@@ -79,12 +79,12 @@ task RightJoystick()
 	while (true)
 	{
 		// Lower/raise claw joint
-		if (vexRT(Ch1) < 0 || vexRT(Ch1) > 0)
+		if (vexRT(Ch2) < 0 || vexRT(Ch2) > 0)
 		{
-			startMotor(clawJoint, vexRT(Ch1));
+			startMotor(clawJoint, vexRT(Ch2));
 		}
 
-		if (vexRT(Ch1) == 0)
+		if (vexRT(Ch2) == 0)
 		{
 			stopMotor(clawJoint);
 		}
