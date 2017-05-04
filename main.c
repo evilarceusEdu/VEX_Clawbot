@@ -27,6 +27,12 @@
 
 */
 
+/*
+	Functions:
+	-Move forwards/backwards
+	-Turn left/right
+	-Stop motors when joystick is inactive
+*/
 task LeftJoystick()
 {
 	while (true)
@@ -61,6 +67,10 @@ task LeftJoystick()
 	}
 }
 
+/*
+	Functions:
+	-Lower/raise claw joint
+*/
 task RightJoystick()
 {
 	while (true)
@@ -78,6 +88,11 @@ task RightJoystick()
 	}
 }
 
+/*
+	Functions:
+	-Open/close claw
+	-Move conveyor belt forwards/backwards
+*/
 task Buttons()
 {
 	int claw_isOpen = false;
@@ -135,11 +150,10 @@ task Buttons()
 	}
 }
 
+// Entrypoint
 task main()
-{                                     //Program begins, insert code within curly braces
-
+{
 	startTask(LeftJoystick);
 	startTask(RightJoystick);
 	startTask(Buttons);
-
 }
