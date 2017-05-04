@@ -23,7 +23,7 @@
   While true
   	a bunch of if statements and stuff here
   end
-  
+
 
 */
 
@@ -138,8 +138,8 @@ task Buttons()
 task main()
 {                                     //Program begins, insert code within curly braces
 
-	StartTask(LeftJoystick);
-	StartTask(RightJoystick);
-	StartTask(Buttons);
+	startTask(LeftJoystick);
+	startTask(RightJoystick);
+	startTask(Buttons);
 
 }
