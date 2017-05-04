@@ -23,18 +23,16 @@
   While true
   	a bunch of if statements and stuff here
   end
+  
 
 */
 
-task main()
-{                                     //Program begins, insert code within curly braces
-	int claw_isOpen = false;
-
+task LeftJoystick()
+{
 	while (true)
 	{
-
 		// Move forward/backwards
-		if (vexRT(Ch3)> 0 || vexRT(Ch3) < 0)
+		if (vexRT(Ch3) > 0 || vexRT(Ch3) < 0)
 		{
 			startMotor(leftMotor, vexRT(Ch3));
 			startMotor(rightMotor, vexRT(Ch3));
@@ -60,10 +58,35 @@ task main()
 			stopMotor(leftMotor);
 			stopMotor(rightMotor);
 		}
+	}
+}
 
+task RightJoystick()
+{
+	while (true)
+	{
+		// Lower/raise claw joint
+		if (vexRT(Ch1) < 0 || vexRT(Ch1) > 0)
+		{
+			startMotor(clawJoint, vexRT(Ch1));
+		}
+
+		if (vexRT(Ch1) == 0)
+		{
+			stopMotor(clawJoint);
+		}
+	}
+}
+
+task Buttons()
+{
+	int claw_isOpen = false;
+
+	while (true)
+	{
 		/*
-			Open/close claw
-			NOTE: Claw must be CLOSED on run (don't want to break anything)
+		  Open/close claw
+		  NOTE: Claw must be CLOSED on run (don't want to break anything)
 		*/
 		if (vexRT(Btn8D) == 1)
 		{
@@ -74,6 +97,7 @@ task main()
 				stopMotor(clawMotor);
 				claw_isOpen = true;
 			}
+
 			else if (claw_isOpen == true)
 			{
 				startMotor(clawMotor, -63);
@@ -81,17 +105,6 @@ task main()
 				stopMotor(clawMotor);
 				claw_isOpen = false;
 			}
-		}
-
-		// TODO: Add function for controlling claw joint
-		if (vexRT(Ch1) < 0 || vexRT(Ch1) > 0)
-		{
-			startMotor(clawJoint, vexRT(Ch1));
-		}
-
-		if (vexRT(Ch1) == 0)
-		{
-			stopMotor(clawJoint);
 		}
 
 		// Move conveyor belt forward
@@ -119,9 +132,14 @@ task main()
 			stopMotor(rightBelt);
 			stopMotor(leftBelt);
 		}
-
 	}
+}
 
+task main()
+{                                     //Program begins, insert code within curly braces
 
+	StartTask(LeftJoystick);
+	StartTask(RightJoystick);
+	StartTask(Buttons);
 
 }
