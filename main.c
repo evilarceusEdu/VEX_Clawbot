@@ -54,15 +54,8 @@ task LeftJoystick()
 			startMotor(rightMotor, vexRT(Ch3));
 		}
 
-		// Turn right
-		if (vexRT(Ch4) > 0)
-		{
-			startMotor(leftMotor, vexRT(Ch4));
-			startMotor(rightMotor, vexRT(Ch4)*-1);
-		}
-
-		// Turn left
-		if (vexRT(Ch4) < 0)
+		// Turn left/right
+		if (vexRT(Ch4) > 0 || vexRT(Ch4) < 0)
 		{
 			startMotor(leftMotor, vexRT(Ch4));
 			startMotor(rightMotor, vexRT(Ch4)*-1);
