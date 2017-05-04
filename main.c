@@ -24,6 +24,16 @@
   	a bunch of if statements and stuff here
   end
 
+  Controls:
+  * Left Joystick Y - Move forward/backwards
+  * Left Joystick X - Turn left/right
+  * Right Joystick Y - Raise/lower claw joint
+  * Right Joystick X - None
+
+  * Button 8D (A) - Open/close claw
+  * Button 6D (RT) - Move conveyor belt forwards
+  * Button 5D (LT) - Move conveyor belt backwards
+
 
 */
 
